@@ -1,0 +1,26 @@
+export const bairrosMaringa = [
+  'Centro',
+  'Zona 01',
+  'Zona 02',
+  'Zona 03',
+  'Zona 04',
+  'Zona 05',
+  'Zona 06',
+  'Zona 07',
+  'Zona 08',
+  'Jardim Alvorada',
+  'Maringa Velho',
+  'Mandacaru',
+  'Morangueira',
+  'Jardim Iguacu',
+  'Jardim Universo',
+  'Jardim Olimpico',
+  'Vila Operaria',
+  'Jardim Pinheiros',
+  'Conjunto Requiao',
+  'Jardim Internorte',
+  'Jardim Ceu Azul',
+  'Jardim Paraiso',
+];
+
+export const bairros = bairrosMaringa;
