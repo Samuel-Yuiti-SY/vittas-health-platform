@@ -277,6 +277,37 @@ O projeto utiliza modelos como:
 
 ## Deploy
 
+## Deploy do Back-end no Render
+
+Configuracao manual no painel do Render:
+
+```txt
+Root Directory: backend
+Build Command: pip install -r requirements.txt
+Start Command: uvicorn main:app --host 0.0.0.0 --port $PORT
+```
+
+Variavel de ambiente:
+
+```txt
+ALLOWED_ORIGINS=https://link-final-da-vercel.vercel.app
+```
+
+O arquivo `render.yaml` tambem deixa uma configuracao pronta para o Render usando:
+
+```txt
+ALLOWED_ORIGINS=https://vittas-health-platform.vercel.app
+```
+
+Atualize esse valor depois, caso a Vercel gere outro dominio final.
+
+Testes apos deploy:
+
+```txt
+https://sua-api-render.onrender.com/health
+https://sua-api-render.onrender.com/docs
+```
+
 ### Front-end na Vercel
 
 Configuracoes recomendadas:
