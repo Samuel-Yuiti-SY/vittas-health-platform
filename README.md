@@ -8,15 +8,15 @@ O projeto foi desenvolvido como parte da segunda entrega da AEP, relacionado ao 
 
 GitHub:
 
-[link sera inserido apos publicar o repositorio]
+https://github.com/Samuel-Yuiti-SY/vittas-health-platform
 
 Front-end na Vercel:
 
-[link sera inserido apos deploy]
+https://vittas-health-platform.vercel.app/
 
 API no Render:
 
-[link sera inserido apos deploy]
+https://vittas-health-platform.onrender.com
 
 ## Versao
 
@@ -182,7 +182,7 @@ VITE_API_URL=http://127.0.0.1:8000
 Em producao na Vercel, configurar:
 
 ```txt
-VITE_API_URL=https://sua-api-render.onrender.com
+VITE_API_URL=https://vittas-health-platform.onrender.com
 ```
 
 ### Back-end
@@ -190,13 +190,13 @@ VITE_API_URL=https://sua-api-render.onrender.com
 No Render, configurar se necessario:
 
 ```txt
-ALLOWED_ORIGINS=https://seu-front.vercel.app
+ALLOWED_ORIGINS=https://vittas-health-platform.vercel.app
 ```
 
 Para mais de uma origem:
 
 ```txt
-ALLOWED_ORIGINS=https://seu-front.vercel.app,https://outro-preview.vercel.app
+ALLOWED_ORIGINS=https://vittas-health-platform.vercel.app,https://outro-preview.vercel.app
 ```
 
 ## Estrutura principal
@@ -304,13 +304,13 @@ Atualize esse valor depois, caso a Vercel gere outro dominio final.
 Testes apos deploy:
 
 ```txt
-https://sua-api-render.onrender.com/health
-https://sua-api-render.onrender.com/docs
+https://vittas-health-platform.onrender.com/health
+https://vittas-health-platform.onrender.com/docs
 ```
 
-### Front-end na Vercel
+## Deploy do Front-end na Vercel
 
-Configuracoes recomendadas:
+Configuracao recomendada:
 
 ```txt
 Framework Preset: Vite
@@ -323,8 +323,23 @@ Install Command: npm install
 Variavel de ambiente obrigatoria na Vercel:
 
 ```txt
-VITE_API_URL=https://sua-api-render.onrender.com
+VITE_API_URL=https://vittas-health-platform.onrender.com
 ```
+
+Apos deploy, testar:
+
+```txt
+https://vittas-health-platform.vercel.app/
+https://vittas-health-platform.vercel.app/login
+```
+
+Depois de obter a URL final da Vercel, voltar no Render e atualizar a variavel:
+
+```txt
+ALLOWED_ORIGINS=https://vittas-health-platform.vercel.app
+```
+
+Depois fazer redeploy no Render.
 
 O arquivo `frontend/vercel.json` ja possui rewrite para o React Router:
 
@@ -352,14 +367,14 @@ Start Command: uvicorn main:app --host 0.0.0.0 --port $PORT
 Variavel de ambiente recomendada no Render, depois que a Vercel gerar o link:
 
 ```txt
-ALLOWED_ORIGINS=https://seu-front.vercel.app
+ALLOWED_ORIGINS=https://vittas-health-platform.vercel.app
 ```
 
 Depois do deploy, testar:
 
 ```txt
-https://sua-api-render.onrender.com/health
-https://sua-api-render.onrender.com/docs
+https://vittas-health-platform.onrender.com/health
+https://vittas-health-platform.onrender.com/docs
 ```
 
 ## Passo a passo de deploy
@@ -378,13 +393,7 @@ https://sua-api-render.onrender.com/docs
 Nome sugerido do repositorio:
 
 ```txt
-Vittas
-```
-
-ou:
-
-```txt
-VITTAS-MVP
+vittas-health-platform
 ```
 
 Se o repositorio ainda nao existir e o GitHub CLI estiver configurado:
@@ -394,7 +403,7 @@ git init
 git add .
 git commit -m "feat: cria MVP funcional do VITTAS"
 git branch -M main
-gh repo create Samuel-Yuiti-SY/Vittas --public --source=. --remote=origin --push
+gh repo create Samuel-Yuiti-SY/vittas-health-platform --public --source=. --remote=origin --push
 ```
 
 Se o repositorio ja tiver sido criado manualmente:
@@ -404,7 +413,7 @@ git init
 git add .
 git commit -m "feat: cria MVP funcional do VITTAS"
 git branch -M main
-git remote add origin https://github.com/Samuel-Yuiti-SY/Vittas.git
+git remote add origin https://github.com/Samuel-Yuiti-SY/vittas-health-platform.git
 git push -u origin main
 ```
 
