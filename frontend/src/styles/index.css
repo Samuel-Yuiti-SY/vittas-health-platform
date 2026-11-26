@@ -504,3 +504,102 @@ html {
     animation-iteration-count: 1 !important;
   }
 }
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("/fonts/nunito-sans.woff2") format("woff2");
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+body {
+  font-family: "Nunito Sans", system-ui, sans-serif;
+}
+:root {
+  --health-ink: #103e57;
+  --health-muted: #385d6d;
+  --health-paper: #e7f5f4;
+  --health-accent: #006a6a;
+  --health-line: #c7dedf;
+}
+.health-hero {
+  background: #e7f5f4;
+}
+.health-hero-grid {
+  gap: clamp(28px, 5vw, 80px);
+  padding-block: clamp(36px, 5vw, 75px);
+}
+.health-intro h1 {
+  max-width: 10em;
+  font-weight: 760;
+  font-size: clamp(44px, 5.8vw, 84px);
+  letter-spacing: -0.05em;
+  line-height: 1.03;
+}
+.health-intro h1 em {
+  font-weight: inherit;
+}
+.health-eyebrow {
+  letter-spacing: 0.13em;
+}
+.health-header-actions > a,
+.health-actions > a {
+  border-radius: 100px;
+}
+.care-photo {
+  display: block;
+  width: 100%;
+  height: clamp(285px, 32vw, 440px);
+  object-fit: cover;
+  object-position: 66% 50%;
+  border-radius: 48% 48% 8px 8px;
+}
+.guide-strip {
+  padding-top: clamp(32px, 5vw, 72px);
+}
+.guide-strip .care-guide {
+  border: 0;
+  border-top: 4px solid #197880;
+  padding: 22px 0 0;
+}
+.care-guide-heading {
+  margin-bottom: 10px;
+}
+.guide-strip .guide-symbol {
+  width: 34px;
+  height: 34px;
+  background: #d9f1ee;
+}
+.guide-strip .care-guide ol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.guide-strip .guide-number {
+  font:
+    700 22px/1.2 "Nunito Sans",
+    sans-serif;
+}
+.guide-strip .care-guide li h3 {
+  font-size: 17px;
+}
+.guide-strip .care-guide li p {
+  font-size: 14px;
+}
+.guide-strip .guide-emergency {
+  background: #fff7ef;
+  padding: 12px 16px;
+}
+.health-flow {
+  background: #e8f4f5;
+}
+@media (max-width: 767px) {
+  .care-photo {
+    height: 245px;
+    border-radius: 90px 8px 8px 8px;
+  }
+  .guide-strip .care-guide ol {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

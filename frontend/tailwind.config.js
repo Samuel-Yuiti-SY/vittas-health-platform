@@ -5,10 +5,10 @@ export default {
     extend: {
       colors: {
         vittas: {
-          blue: "#245b65",
-          blueSoft: "#e4f0ee",
-          navy: "#193f49",
-          green: "#287451",
+          blue: "#086575",
+          blueSoft: "#e5f5f3",
+          navy: "#103e57",
+          green: "#006a6a",
           greenDark: "#166534",
           mint: "#DCFCE7",
           gray: "#f8faf9",

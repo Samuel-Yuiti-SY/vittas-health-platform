@@ -60,11 +60,9 @@ export default function Home() {
         <section className="health-hero" aria-labelledby="home-title">
           <div className="health-container health-hero-grid">
             <div className="health-intro">
-              <p className="health-eyebrow">VITTAS · SAÚDE PÚBLICA DIGITAL</p>
+              <p className="health-eyebrow">PORTAL DO PACIENTE</p>
               <h1 id="home-title">
-                Um caminho mais claro
-                <br />
-                até o <em>atendimento.</em>
+                Seu caminho até o <em>atendimento.</em>
               </h1>
               <p className="health-lead">
                 Pré-triagem, indicação de unidade e fila virtual. Um projeto
@@ -73,7 +71,7 @@ export default function Home() {
               </p>
               <div className="health-actions">
                 <Button to="/login">
-                  Conhecer o sistema <ArrowRight size={18} aria-hidden />
+                  Iniciar pré-triagem <ArrowRight size={18} aria-hidden />
                 </Button>
                 <Button to="/cadastro" variant="ghost">
                   Cadastrar paciente
@@ -86,40 +84,50 @@ export default function Home() {
                 </span>
               </p>
             </div>
-            <aside className="care-guide" aria-labelledby="guia-title">
-              <div className="care-guide-heading">
-                <span className="guide-symbol">
-                  <ClipboardList size={25} aria-hidden />
-                </span>
-                <p>GUIA DO PACIENTE</p>
-              </div>
-              <h2 id="guia-title">Antes de começar</h2>
-              <p className="guide-description">
-                Veja as etapas disponíveis na demonstração.
-              </p>
-              <ol>
-                {passos.map(([title, text], index) => (
-                  <li key={title}>
-                    <span className="guide-number">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <h3>{title}</h3>
-                      <p>{text}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-              <div className="guide-emergency">
-                <strong>Precisa de ajuda urgente?</strong>
-                <p>
-                  Em uma emergência real, <a href="tel:192">ligue 192</a>. A
-                  simulação não substitui atendimento médico.
-                </p>
-              </div>
-            </aside>
+            <img
+              className="care-photo"
+              src="/images/acolhimento.webp"
+              alt=""
+              width="1152"
+              height="648"
+              fetchPriority="high"
+            />
           </div>
         </section>
+        <div className="health-container guide-strip">
+          <aside className="care-guide" id="guia" aria-labelledby="guia-title">
+            <div className="care-guide-heading">
+              <span className="guide-symbol">
+                <ClipboardList size={25} aria-hidden />
+              </span>
+              <p>GUIA DO PACIENTE</p>
+            </div>
+            <h2 id="guia-title">Antes de começar</h2>
+            <p className="guide-description">
+              Do cadastro ao acompanhamento da fila virtual.
+            </p>
+            <ol>
+              {passos.map(([title, text], index) => (
+                <li key={title}>
+                  <span className="guide-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <div className="guide-emergency">
+              <strong>Precisa de ajuda urgente?</strong>
+              <p>
+                Em uma emergência real, <a href="tel:192">ligue 192</a>. A
+                simulação não substitui atendimento médico.
+              </p>
+            </div>
+          </aside>
+        </div>
         <section
           id="servicos"
           className="health-container health-services"
@@ -127,7 +135,7 @@ export default function Home() {
         >
           <div className="health-section-heading">
             <p className="health-eyebrow">RECURSOS DO PROJETO</p>
-            <h2 id="servicos-title">Cada etapa tem seu lugar.</h2>
+            <h2 id="servicos-title">Serviços do portal</h2>
           </div>
           <div className="health-service-list">
             {servicos.map(({ icon: Icon, title, description }, index) => (
