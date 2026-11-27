@@ -447,3 +447,5 @@ Como os dados sao simulados em memoria, alteracoes feitas durante o uso podem se
 ## Creditos
 
 Projeto criado por Samuel Yuiti Endo Silva e equipe.
+
+As regras de interface e acessibilidade estão no [guia de design](frontend/DESIGN.md).

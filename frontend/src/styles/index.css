@@ -603,3 +603,10 @@ body {
     gap: 0;
   }
 }
+
+.role-directory { border-top: 2px solid var(--health-accent); }
+.role-entry { width: 100%; display: grid; grid-template-columns: 50px 1fr; column-gap: 14px; align-items: start; padding: 14px 12px; border-bottom: 1px solid var(--health-line); background: white; }
+.role-entry > div { grid-column: 1; grid-row: 1 / span 3; flex-direction: column; align-items: center; }
+.role-entry > span { grid-column: 2; }
+.role-entry[aria-pressed="true"] { background: var(--health-paper); box-shadow: inset 3px 0 var(--health-accent); }
+.role-entry:focus-visible { outline: 3px solid var(--health-accent); outline-offset: -3px; }

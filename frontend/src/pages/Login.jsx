@@ -19,28 +19,28 @@ import { salvarUsuario } from "../utils/auth.js";
 const perfisTeste = [
   {
     perfil: "Paciente",
-    descricao: "Acompanha pre-triagem, resultado e fila virtual.",
+    descricao: "Acompanha pré-triagem, resultado e fila virtual.",
     email: "paciente@vittas.com.br",
     destino: "/pre-triagem",
     icon: UserRound,
   },
   {
-    perfil: "Funcionario",
-    descricao: "Gerencia recepcao, fila e chamada de pacientes.",
+    perfil: "Funcionário",
+    descricao: "Gerencia recepção, fila e chamada de pacientes.",
     email: "funcionario@vittas.com.br",
     destino: "/painel-funcionario",
     icon: UsersRound,
   },
   {
     perfil: "Admin",
-    descricao: "Visualiza indicadores gerais e simulacao operacional.",
+    descricao: "Visualiza indicadores gerais e simulação operacional.",
     email: "admin@vittas.com.br",
     destino: "/dashboard",
     icon: Building2,
   },
   {
     perfil: "Profissional",
-    descricao: "Registra atendimento, orientacao e atestado digital.",
+    descricao: "Registra atendimento, orientação e atestado digital.",
     email: "profissional@vittas.com.br",
     destino: "/painel-profissional",
     icon: Stethoscope,
@@ -80,7 +80,7 @@ function Login() {
       const mensagem =
         error.response?.data?.detail ||
         error.mensagemAmigavel ||
-        "Nao foi possivel entrar. Confira se o back-end esta rodando.";
+        "Não foi possível entrar. Confira seus dados e tente novamente.";
       setErro(mensagem);
     } finally {
       setCarregando(false);
@@ -101,8 +101,7 @@ function Login() {
               Acesso ao sistema
             </h1>
             <p className="mt-3 leading-7 text-vittas-muted">
-              Entre com um perfil simulado para acessar a area correspondente do
-              MVP.
+              Escolha um perfil de demonstração ou entre com seu e-mail e senha.
             </p>
           </div>
 
@@ -163,10 +162,10 @@ function Login() {
 
           <div className="mt-5 rounded-lg bg-vittas-slate p-4 text-sm leading-6 text-vittas-muted">
             <p className="font-semibold text-vittas-navy">
-              Senha dos usuarios simulados: 123456
+              Senha dos usuários simulados: 123456
             </p>
             <p className="mt-1">
-              Ainda nao tem cadastro?{" "}
+              Ainda não tem cadastro?{" "}
               <Link className="font-bold text-vittas-blue" to="/cadastro">
                 Cadastrar paciente
               </Link>
@@ -177,21 +176,22 @@ function Login() {
         <section className="space-y-4">
           <div>
             <p className="text-sm font-bold uppercase text-vittas-green">
-              Perfis de demonstracao
+              Perfis de demonstração
             </p>
             <h2 className="mt-2 text-2xl font-extrabold text-vittas-navy">
-              Escolha uma area para testar
+              Escolha o seu perfil
             </h2>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="role-directory">
             {perfisTeste.map((perfil) => {
               const Icon = perfil.icon;
               const ativo = credenciais.email === perfil.email;
 
               return (
                 <button
-                  className={`rounded-lg border bg-white p-4 text-left shadow-sm transition hover:border-vittas-blue hover:shadow-md ${
+                  aria-pressed={ativo}
+                  className={`role-entry text-left ${
                     ativo
                       ? "border-vittas-blue ring-2 ring-blue-100"
                       : "border-vittas-border"
@@ -211,13 +211,13 @@ function Login() {
                       />
                     )}
                   </div>
-                  <span className="mt-4 block text-lg font-bold text-vittas-navy">
+                  <span className="role-name block text-lg font-bold text-vittas-navy">
                     {perfil.perfil}
                   </span>
-                  <span className="mt-2 block text-sm leading-6 text-vittas-muted">
+                  <span className="role-description block text-sm leading-6 text-vittas-muted">
                     {perfil.descricao}
                   </span>
-                  <span className="mt-3 block break-all text-sm font-semibold text-vittas-blue">
+                  <span className="role-email block break-all text-sm font-semibold text-vittas-blue">
                     {perfil.email}
                   </span>
                 </button>
